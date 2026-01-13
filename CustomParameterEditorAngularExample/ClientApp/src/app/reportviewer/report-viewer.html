@@ -1,5 +1,9 @@
+<ng-template #customDateRangeTemplateRef let-data="data">
+  <app-custom-date-range-input [data]="data"></app-custom-date-range-input>
+</ng-template>
+
 <dx-report-viewer [reportUrl]="reportUrl" height="calc(100vh - 90px)" developmentMode="true">
     <dxrv-request-options [invokeAction]="invokeAction" [host]="hostUrl"></dxrv-request-options>
     <dxrv-progressbar-settings position="BottomLeft"></dxrv-progressbar-settings>
-    <dxrv-callbacks (CustomizeParameterEditors)="onCustomizeParameterEditors($event)"></dxrv-callbacks>
+    <dxrv-callbacks (CustomizeParameterEditors)="onCustomizeParameterEditors($event)" (ParametersSubmitted)="ParametersSubmitted($event)"></dxrv-callbacks>
 </dx-report-viewer>

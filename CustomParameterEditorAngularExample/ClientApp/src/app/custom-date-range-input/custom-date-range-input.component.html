@@ -1,0 +1,15 @@
+<dx-date-range-box
+  id="custom-date-range"
+  [max]="max"
+  [(value)]="data.value"
+  [disabled]="data.disabled"
+  [labelMode]="'hidden'"
+  displayFormat="MMMM yyyy"
+  [acceptCustomValue]="false"
+  [useMaskBehavior]="true"
+  [multiView]="false"
+  [calendarOptions]="{ maxZoomLevel: 'year', minZoomLevel: 'century' }"
+  >
+  <!-- [min]="min" -->
+  <dx-validator [validationRules]="data.validationRules"> </dx-validator>
+</dx-date-range-box>
