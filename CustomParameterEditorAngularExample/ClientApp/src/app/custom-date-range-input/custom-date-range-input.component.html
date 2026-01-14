@@ -9,6 +9,7 @@
   [useMaskBehavior]="true"
   [multiView]="false"
   [calendarOptions]="{ maxZoomLevel: 'year', minZoomLevel: 'century' }"
+  (onValueChanged)="data.onValueChanged($event)"
   >
   <!-- [min]="min" -->
   <dx-validator [validationRules]="data.validationRules"> </dx-validator>

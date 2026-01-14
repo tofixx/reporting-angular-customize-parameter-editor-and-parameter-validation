@@ -96,22 +96,23 @@ export class ReportViewerComponent {
   }
 
   ParametersSubmitted($event: any) {
+    console.log($event);
     if (this.customDateRangeInput) {
-      const restDate = (jsDate: Date) => {
-        // add timezone offset (hours) to date to avoid day shift in server
-        const timezoneOffsetMinutes = jsDate.getTimezoneOffset();
-        const adjustedDate = new Date(
-          jsDate.getTime() - timezoneOffsetMinutes * 60000
-        );
-        return adjustedDate;
-      };
-      const rangeparam = $event.args.Parameters.filter(
-        (x) => x.Key === "daterange"
-      )[0];
-      const startDate = this.customDateRangeInput.data.value[0];
-      const endDate = this.customDateRangeInput.data.value[1];
-      const timeRangeRest = [restDate(startDate), restDate(endDate)];
-      rangeparam.Value = timeRangeRest;
+      // const restDate = (jsDate: Date) => {
+      //   // add timezone offset (hours) to date to avoid day shift in server
+      //   const timezoneOffsetMinutes = jsDate.getTimezoneOffset();
+      //   const adjustedDate = new Date(
+      //     jsDate.getTime() - timezoneOffsetMinutes * 60000
+      //   );
+      //   return adjustedDate;
+      // };
+      // const rangeparam = $event.args.Parameters.filter(
+      //   (x) => x.Key === "daterange"
+      // )[0];
+      // const startDate = this.customDateRangeInput.data.value[0];
+      // const endDate = this.customDateRangeInput.data.value[1];
+      // const timeRangeRest = [restDate(startDate), restDate(endDate)];
+      // rangeparam.Value = timeRangeRest;
     }
   }
 
